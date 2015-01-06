@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+    <title>Programming Assignment 3</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <link href='images/logo.png' rel='shortcut icon' type='image/png'>
+    <link rel="stylesheet" href="images/style.css" type="text/css" />
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9yRoIAxZeNE4_ZiVmT9oWYAFigoOLII8">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing"></script>
+    <script type="text/javascript"src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div class="content">
+      <div class="preheader">
+      </div>
+      <div class="header">
+        <div class="title">Programming Assignment 3</div>
+        <div class="slogan">Final Assignment for Programming Course</div>
+      </div>
+      <div class="main_content">
+        <div class="sd_right">
+          <div class="text_padding">
+            <h2>Add a New Place</h2>
+            <form id="myForm">
+                Name: <input title="Enter the Name of the place" type="text" name="name" maxlength="30" onfocus="chBackground(this)" onmouseout="reBackground(this)"/>
+                Description: <textarea name="desc" rows="3" onfocus="chBackground(this)" maxlength="50" onmouseout="reBackground(this)" placeholder="Enter a short Description of the place here..."></textarea>
+                Place Type: <select name="typePlace" title="Select the type of the place">
+		            <option value="0" selected>Select one option</option>
+                    <option value="Restaurant/Bar">Restaurant/Bar</option>
+                    <option value="Shop">Shop</option>
+                    <option value="Monument">Monument</option>
+                    <option value="Educational Institution">Educational Institution</option>
+                    <option value="Public Place">Public Place</option>
+                </select>
+                Score(0-100): <input type="text" name="score" onfocus="chBackground(this)" onmouseout="reBackground(this)" title="Enter the Score to indicate how much you like/hate the place" placeholder="Number between 0 to 100"/>
+                Lat(Y): <input type="text" name="lat" onfocus="chBackground(this)" onmouseout="reBackground(this)" title="Enter the Latitude of the place" placeholder="Number between -90 to 90"/>
+                Long(X): <input type="text" name="long" onfocus="chBackground(this)" onmouseout="reBackground(this)" title="Enter the Longitude of the place" placeholder="Number between -180 to 180"/>
+            </form>
+            <div>
+                <button onclick="catchCoor()" title="Catch coordinates from the map">Catch Coord</button>
+                <button onclick="addPlace(myForm)">Add Place</button><br><br>                
+            </div>
+            <h2>Visualization Options</h2> 
+              <input type="radio" name="visualization" onclick="filterData()" value="All" checked> All<br>
+              <input type="radio" name="visualization" onclick="filterData()" value="Restaurant/Bar" > Restaurant/Bar<br>
+              <input type="radio" name="visualization" onclick="filterData()" value="Shop" > Shop<br>
+              <input type="radio" name="visualization" onclick="filterData()" value="Monument" > Monument<br>
+              <input type="radio" name="visualization" onclick="filterData()" value="Educational Institution" > Educational Institution<br>
+              <input type="radio" name="visualization" onclick="filterData()" value="Public Place" > Public Place            
+            <br><br>
+            <h2>Set Colors</h2>
+              <input type="radio" name="color" onclick="initialize()" value="Type" checked> Type<br>
+              <input type="radio" name="color" onclick="initialize()" value="Score" > Score
+          </div>
+        </div>
+        <div class="sd_left">
+            <div id="map-canvas"></div>
+            <div id="table-canvas"></div>
+            <div id="buttons">
+                <button onclick="increScore()" title="Increase score by 10">Increase Score</button>
+                <button onclick="decreScore()" title="Decrease score by 10">Decrease Score</button>
+                <button onclick="delPlaces()" title="To delete multiple places, select rows by keeping pressed Ctr + click on them">Delete Selected Places</button>
+            </div>
+        </div>
+        <div class="footer">
+          <div class="padding">Powered by <a href="http://co.linkedin.com/pub/jefferson-valencia-g%C3%B3mez/27/ba8/402">Jefferson Valencia Gómez</a></div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
