@@ -1,6 +1,6 @@
 # Final Programming Assignment
 
-## Javascript Programming
+## JavaScript Programming
 
 The goal of the assignment is to implement a 1-page Web application that visualizes information on a google map.
 
